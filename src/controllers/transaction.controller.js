@@ -21,7 +21,7 @@ export const addTransaction = async (req, res) => {
 
     let validator = new Validator(req.body, {
       description: 'required',
-      amount: 'required',
+      amount: 'required|numeric|min:1',
       type: 'required|digits_between:0,1'
     })
 
